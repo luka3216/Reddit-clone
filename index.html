@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <style>
+            body {
+                margin:0;
+                font:normal x-small verdana,arial,helvetica,sans-serif;
+            }
+            a {
+                color:black;
+                text-decoration:none;
+            }
+            a:hover {
+                text-decoration:underline;
+            }
+            #header {
+                width:100%;
+                border-bottom: 1px solid #5f99cf;
+                background-color:#cee3f8;
+                float:left;
+            }
+            #header-top {
+                float:left;
+                width:100%;
+                background-color:#f0f0f0;
+                height:18px;
+                border-bottom:1px solid grey;
+                font-weight:normal;               
+                text-transform:uppercase;
+                white-space:nowrap;
+                font-size:90%;
+                line-height:18px;
+            }
+            .selected-title {
+                padding-left:5px;
+                padding-right:21px;
+            }
+            #header-bottom-left {
+                text-transform:uppercase;
+                font-weight:bold;
+                
+            }
+            #header-image {
+                text-indent:-9999px;
+                background-image:url(sprite-reddit.bTLvdEETokI.png);
+                background-position-y:-1323px;
+                background-repeat:no-repeat;
+                height:40px;
+                width:120px;
+                vertical-align:bottom;
+                display:inline-block;
+                margin-top:2px;
+                margin-bottom:3px;
+                margin-right:5px;
+            }
+            .dropdown {
+                float:left;
+            }
+            .top-right-list li:before{content:'\00B7';padding-right:5px;}
+            .top-right-list {
+                float:left;
+            }
+            .fixed-list{
+                margin:0px;
+                padding:0px;
+            }
+            .fixed-list-item {
+                display:inline;
+                margin-right:3px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <div id="header-top">
+                <div class="dropdown" onclick="open()">
+                    <span class="selected-title">My subreddits</span>
+                </div>
+                <div class="top-right-list">
+                    <ul class="fixed-list">
+                        <li class="fixed-list-item">
+                            <a href="/hbj/">popular</a>
+                        </li>
+                        <li class="current fixed-list-item">
+                            <a href="/ssdg/">all</a>
+                        </li>
+                        <li class="fixed-list-item">
+                                <a href="/hbj/">random</a>
+                        </li>
+                        <li class="fixed-list-item">
+                                <a href="/hbj/">users</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="header-bottom-left">
+                <a href="/" id="header-image">Reddit.com</a>
+                <span>
+                    <a href="sgs">all</a>
+                </span>
+            </div>
+        </div>
+    </body>
+</html>
