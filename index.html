@@ -201,6 +201,8 @@
             }           
             .post {
                 margin-top:20px;
+                display:flex;
+                flex-wrap:wrap;
             }
             .rank {
                 float: left;
@@ -220,6 +222,7 @@
                 font-size: small;
                 text-align: center;
                 color: #c6c6c6;
+                flex-shrink:0;
             }
             .upvote-arrow {
                 margin-left:7px;
@@ -617,13 +620,11 @@
                 <div class="post">
                     <span class="rank">1 </span>
                     <div class="upvotes">
-                    <div class="upvote-arrow"></div>
+                        <div class="upvote-arrow"></div>
                         <span class="upvote-count">24.5k</span>
                         <div class="downvote-arrow"></div>
                     </div>
-                     <a class="thumbnail">
-    
-                    </a>
+                    <a class="thumbnail"></a>
                     <div class="post-summary">
                         <div class="post-title">
                             <a href="/dd/" class="post-title-link">sample title</a>
