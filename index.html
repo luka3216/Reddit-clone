@@ -41,8 +41,8 @@
             }
             #header-bottom-left {
                 text-transform:uppercase;
-                font-weight:bold;
-                
+                font-weight:bold;    
+                min-width:330px;    
             }
             #header-bottom-left .choice {
                 margin-left:6px;
@@ -110,11 +110,16 @@
                 font-weight: bold;
                 background-color:#f0f0f0;
             }
+            #content {
+                display:flex;
+                justify-content:space-between;
+                flex-wrap:wrap-reverse;
+                flex-direction:row;
+            }
             #side {
                 display:block;
                 width:300px;
-                float:right;
-                margin-top:-20px;
+                margin-left:auto;
             }
             #search-div {
                 width:300px;
@@ -203,6 +208,7 @@
                 margin-top:20px;
                 display:flex;
                 flex-wrap:wrap;
+                min-width: 200px;
             }
             .rank {
                 float: left;
@@ -216,13 +222,13 @@
                 float: left;
                 margin-right: 7px;
                 margin-left: 7px;
+                width:33px;
                 background: transparent;
                 overflow: hidden;
                 font-weight: bold;
                 font-size: small;
                 text-align: center;
                 color: #c6c6c6;
-                flex-shrink:0;
             }
             .upvote-arrow {
                 margin-left:7px;
@@ -286,9 +292,23 @@
             .link-list-comments {
                 color:#084074;
             }
-            #bottom-left-list {
+            #view-more {
+                color:grey;
+                font-size:larger;
             }
-            #choices-list {
+            #next-page a {
+                background-color:hsl(224, 64%, 87%);
+                border-style:solid;
+                border-width:1px;
+                border-radius:3px;
+                padding-left:3px;
+                padding-right:3px;
+                border-color:#5f99cf;
+                color:#084074;
+            }
+            #next-page a:hover{
+                border-color:#084074;
+                text-decoration:none;
             }
 
         </style>
@@ -360,65 +380,6 @@
             </div>
         </div>
         <div id="content">
-            <div id="side">
-                <div id="search-div">
-                    <form id="search-bar" style="margin-top:1em">
-                        <input type="text" id="search-input" placeholder="search">
-                        <input type="submit" value="" id="search-button">
-                    </form>
-                </div>
-                <div id="submits">
-                    <div class="submit-button">
-                            <a href="/dfg/" data-event-action="submit" class="submit-button-text">Submit a new link</a>
-                        <div class="end-arrow"></div>
-                    </div>
-                    <div class="submit-button">
-                            <a href="/dfg/" data-event-action="submit" class="submit-button-text">Submit a new link</a>
-                        <div class="end-arrow"></div>
-                    </div>
-                    <div class="submit-button">
-                            <a href="/dfg/" data-event-action="submit" class="submit-button-text">Submit a new link</a>
-                        <div class="end-arrow"></div>
-                    </div>
-                </div>  
-                <div class="recent-links">
-                    <span style="text-transform: uppercase;color:grey">Recently Viewed Links</span>
-                    <div class="link-list">
-                        <div class="upvote-downvote">
-                            <div class="upvote-arrow"></div>
-                            <div class="downvote-arrow"></div>
-                        </div> 
-                        <div class="link-list-item-description">                    
-                            <div><a href="/dd/" class="link-list-title">samdhh fdh h re hre hreh re reg re gregple title</a></div>
-                            <span>2455 points <a href="dg"class="link-list-comments">241 comments</a></span>
-                        </div> 
-                        <div class="upvote-downvote">
-                            <div class="upvote-arrow"></div>
-                            <div class="downvote-arrow"></div>
-                        </div> 
-                        <div class="link-list-item-description">                    
-                            <div><a href="/dd/" class="link-list-title">samdhh fdh h re hre hreh re reg re gregple title</a></div>
-                            <span>2455 points <a href="dg"class="link-list-comments">241 comments</a></span>
-                        </div> 
-                        <div class="upvote-downvote">
-                            <div class="upvote-arrow"></div>
-                            <div class="downvote-arrow"></div>
-                        </div> 
-                        <div class="link-list-item-description">                    
-                            <div><a href="/dd/" class="link-list-title">samdhh fdh h re hre hreh re reg re gregple title</a></div>
-                            <span>2455 points <a href="dg"class="link-list-comments">241 comments</a></span>
-                        </div> 
-                        <div class="upvote-downvote">
-                            <div class="upvote-arrow"></div>
-                            <div class="downvote-arrow"></div>
-                        </div> 
-                        <div class="link-list-item-description">                    
-                            <div><a href="/dd/" class="link-list-title">samdhh fdh h re hre hreh re reg re gregple title</a></div>
-                            <span>2455 points <a href="dg"class="link-list-comments">241 comments</a></span>
-                        </div> 
-                    </div>
-                </div>                 
-            </div> 
             <div id="post-content">
                 <div class="post">
                     <span class="rank">1 </span>
@@ -671,6 +632,66 @@
                         </div>
                     </div>
                 </div>
+                <div style="margin-top:10px;"><span id="view-more">view more <span id ="next-page"><a href="s">next></a></span></span></div>
+            </div>
+            <div id="side">
+                <div id="search-div">
+                    <form id="search-bar" style="margin-top:1em">
+                        <input type="text" id="search-input" placeholder="search">
+                        <input type="submit" value="" id="search-button">
+                    </form>
+                </div>
+                <div id="submits">
+                    <div class="submit-button">
+                            <a href="/dfg/" data-event-action="submit" class="submit-button-text">Submit a new link</a>
+                        <div class="end-arrow"></div>
+                    </div>
+                    <div class="submit-button">
+                            <a href="/dfg/" data-event-action="submit" class="submit-button-text">Submit a new link</a>
+                        <div class="end-arrow"></div>
+                    </div>
+                    <div class="submit-button">
+                            <a href="/dfg/" data-event-action="submit" class="submit-button-text">Submit a new link</a>
+                        <div class="end-arrow"></div>
+                    </div>
+                </div>  
+                <div class="recent-links">
+                    <span style="text-transform: uppercase;color:grey">Recently Viewed Links</span>
+                    <div class="link-list">
+                        <div class="upvote-downvote">
+                            <div class="upvote-arrow"></div>
+                            <div class="downvote-arrow"></div>
+                        </div> 
+                        <div class="link-list-item-description">                    
+                            <div><a href="/dd/" class="link-list-title">samdhh fdh h re hre hreh re reg re gregple title</a></div>
+                            <span>2455 points <a href="dg"class="link-list-comments">241 comments</a></span>
+                        </div> 
+                        <div class="upvote-downvote">
+                            <div class="upvote-arrow"></div>
+                            <div class="downvote-arrow"></div>
+                        </div> 
+                        <div class="link-list-item-description">                    
+                            <div><a href="/dd/" class="link-list-title">samdhh fdh h re hre hreh re reg re gregple title</a></div>
+                            <span>2455 points <a href="dg"class="link-list-comments">241 comments</a></span>
+                        </div> 
+                        <div class="upvote-downvote">
+                            <div class="upvote-arrow"></div>
+                            <div class="downvote-arrow"></div>
+                        </div> 
+                        <div class="link-list-item-description">                    
+                            <div><a href="/dd/" class="link-list-title">samdhh fdh h re hre hreh re reg re gregple title</a></div>
+                            <span>2455 points <a href="dg"class="link-list-comments">241 comments</a></span>
+                        </div> 
+                        <div class="upvote-downvote">
+                            <div class="upvote-arrow"></div>
+                            <div class="downvote-arrow"></div>
+                        </div> 
+                        <div class="link-list-item-description">                    
+                            <div><a href="/dd/" class="link-list-title">samdhh fdh h re hre hreh re reg re gregple title</a></div>
+                            <span>2455 points <a href="dg"class="link-list-comments">241 comments</a></span>
+                        </div> 
+                    </div>
+                </div>                 
             </div>
         </div>
     </body>
