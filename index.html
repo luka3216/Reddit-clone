@@ -19,7 +19,7 @@
                 width:100%;
                 border-bottom: 1px solid #5f99cf;
                 background-color:#cee3f8;
-
+                position:relative;
             }
             #header-top {
                 float:left;
@@ -109,6 +109,16 @@
                 top:0;
                 font-weight: bold;
                 background-color:#f0f0f0;
+            }
+            #login-info {
+                position:absolute;
+                right:0;
+                bottom:0;
+                padding-right:5px;
+                background-color:#EFF7FF;
+                padding-left:5px;
+                padding-top:3px;
+                border-top-left-radius: 5px;
             }
             #content {
                 display:flex;
@@ -201,18 +211,32 @@
                 margin-left:272px;
                 text-align:center;
             }
+            #gold-outer {
+                border:1px solid #c4b487;
+                width:100%;
+                height:75px;
+                float:right;
+                margin-bottom:5px;
+                color: #554a2a;
+                text-align:center;
+            }
+            #gold-inner {
+                border: 1px solid #dbd1b5;
+                margin:1px;
+                height:71px;
+            }
             #post-content {
                 margin-left:15px;
                 display:flex;
                 flex-direction:column;
                 flex-wrap:wrap;
-                flex:1 1 150px;
-                min-width:150px;
+                flex:1 1 200px;
+                min-width:200px;
             }           
             .post {
                 margin-top:20px;
                 display:flex;
-                flex-wrap:wrap;
+                flex-wrap:nowrap;
                 min-width: 200px;
             }
             .rank {
@@ -234,6 +258,7 @@
                 font-size: small;
                 text-align: center;
                 color: #c6c6c6;
+                min-width:33px;
             }
             .upvote-arrow {
                 margin-left:7px;
@@ -259,12 +284,15 @@
                 width:70px;
                 float:left;
                 cursor:pointer;
+                min-width:70px;
             }
             .post-title-link {
                 color: #0000ff;
                 font-size: medium;
                 font-weight: normal;
                 margin-bottom: 1px;
+                flex:1 1 200px;
+                min-width:200px;
             }
             .post-time-source {
                 color: #888;
@@ -272,6 +300,18 @@
             }
             .subreddit-link {
                 color: #0000ff;
+            }
+            .username{
+                color:#369;
+            }
+            #messages{
+                background-image: url(sprite-reddit.bTLvdEETokI.png);
+                background-position: 0px -1687px;
+                background-repeat: no-repeat;
+                width:15px;
+                height:10px;
+                display:inline-block;
+                padding-top:-3px;
             }
             .psot-bottom-item {
                 color: grey;
@@ -314,6 +354,21 @@
             #next-page a:hover{
                 border-color:#084074;
                 text-decoration:none;
+            }
+            .bar {
+                border: 1px solid #dad0b3;
+                height: 17px;
+                overflow: auto;
+                border-radius: 10px;
+            }
+            .bar span {
+                background-color:#c4b487;
+                display: block;
+                height: 100%;
+                width:40%;
+                background-color: #f3e287;
+                background-image: linear-gradient(to bottom,#fff8ba 0%,#eccf90 100%);
+                border-radius: 8.5px;
             }
 
         </style>
@@ -383,18 +438,22 @@
                     <a href="/fgf">controversial</a>
                 </span>
             </div>
+            <span id="login-info">
+                <a href="/gd" class="username">luxon</a>
+                (777) | <a href="" id="messages"></a> | <a href="fdf" id="preferences">preferences</a> | <a href="sf" id="logout">logout</a>
+            </span>
         </div>
         <div id="content">
             <div id="post-content">
                 <div class="post">
                     <span class="rank">1 </span>
                     <div class="upvotes">
-                        <div class="upvote-arrow"></div>
+                    <div class="upvote-arrow"></div>
                         <span class="upvote-count">24.5k</span>
                         <div class="downvote-arrow"></div>
                     </div>
-                    <a class="thumbnail">
-
+                     <a class="thumbnail">
+    
                     </a>
                     <div class="post-summary">
                         <div class="post-title">
@@ -402,14 +461,13 @@
                             <span>(</span><a href="/dg/" class="post-source">i.reddit.com</a><span>)</span>
                         </div>
                         <div class="post-time-source">
-                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="/dg/" class="subreddit-link">/r/bla</a></span>
+                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="" class="username">/u/user/</a> in <a href="/dg/" class="subreddit-link">/r/bla</a></span>
                         </div>
                         <div class="post-bottom">
                             <a href="/dg" class="psot-bottom-item">24 comments</a>
                             <a href="/dg" class="psot-bottom-item">share</a>
                             <a href="/dg" class="psot-bottom-item">save</a>
-                            <a href="/dg" class="psot-bottom-item">hide</a>
-                            <a href="/dg" class="psot-bottom-item">gild</a>
+                            <a href="/dg" class="psot-bottom-item">hide</a>                                <a href="/dg" class="psot-bottom-item">gild</a>
                             <a href="/dg" class="psot-bottom-item">report</a>
                             <a href="/dg" class="psot-bottom-item">crosspost</a>
                         </div>
@@ -427,11 +485,11 @@
                     </a>
                     <div class="post-summary">
                         <div class="post-title">
-                            <a href="/dd/" class="post-title-link">sample title</a>
+                            <a href="/dd/" class="post-title-link">sample title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title</a>
                             <span>(</span><a href="/dg/" class="post-source">i.reddit.com</a><span>)</span>
                         </div>
                         <div class="post-time-source">
-                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="/dg/" class="subreddit-link">/r/bla</a></span>
+                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="" class="username">/u/user/</a> in <a href="/dg/" class="subreddit-link">/r/bla</a></span>
                         </div>
                         <div class="post-bottom">
                             <a href="/dg" class="psot-bottom-item">24 comments</a>
@@ -459,7 +517,7 @@
                             <span>(</span><a href="/dg/" class="post-source">i.reddit.com</a><span>)</span>
                         </div>
                         <div class="post-time-source">
-                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="/dg/" class="subreddit-link">/r/bla</a></span>
+                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="" class="username">/u/user/</a> in <a href="/dg/" class="subreddit-link">/r/bla</a></span>
                         </div>
                         <div class="post-bottom">
                             <a href="/dg" class="psot-bottom-item">24 comments</a>
@@ -487,7 +545,7 @@
                             <span>(</span><a href="/dg/" class="post-source">i.reddit.com</a><span>)</span>
                         </div>
                         <div class="post-time-source">
-                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="/dg/" class="subreddit-link">/r/bla</a></span>
+                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="" class="username">/u/user/</a> in <a href="/dg/" class="subreddit-link">/r/bla</a></span>
                         </div>
                         <div class="post-bottom">
                             <a href="/dg" class="psot-bottom-item">24 comments</a>
@@ -515,7 +573,7 @@
                             <span>(</span><a href="/dg/" class="post-source">i.reddit.com</a><span>)</span>
                         </div>
                         <div class="post-time-source">
-                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="/dg/" class="subreddit-link">/r/bla</a></span>
+                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="" class="username">/u/user/</a> in <a href="/dg/" class="subreddit-link">/r/bla</a></span>
                         </div>
                         <div class="post-bottom">
                             <a href="/dg" class="psot-bottom-item">24 comments</a>
@@ -543,7 +601,7 @@
                             <span>(</span><a href="/dg/" class="post-source">i.reddit.com</a><span>)</span>
                         </div>
                         <div class="post-time-source">
-                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="/dg/" class="subreddit-link">/r/bla</a></span>
+                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="" class="username">/u/user/</a> in <a href="/dg/" class="subreddit-link">/r/bla</a></span>
                         </div>
                         <div class="post-bottom">
                             <a href="/dg" class="psot-bottom-item">24 comments</a>
@@ -571,33 +629,7 @@
                             <span>(</span><a href="/dg/" class="post-source">i.reddit.com</a><span>)</span>
                         </div>
                         <div class="post-time-source">
-                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="/dg/" class="subreddit-link">/r/bla</a></span>
-                        </div>
-                        <div class="post-bottom">
-                            <a href="/dg" class="psot-bottom-item">24 comments</a>
-                            <a href="/dg" class="psot-bottom-item">share</a>
-                            <a href="/dg" class="psot-bottom-item">save</a>
-                            <a href="/dg" class="psot-bottom-item">hide</a>                                <a href="/dg" class="psot-bottom-item">gild</a>
-                            <a href="/dg" class="psot-bottom-item">report</a>
-                            <a href="/dg" class="psot-bottom-item">crosspost</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="post">
-                    <span class="rank">1 </span>
-                    <div class="upvotes">
-                        <div class="upvote-arrow"></div>
-                        <span class="upvote-count">24.5k</span>
-                        <div class="downvote-arrow"></div>
-                    </div>
-                    <a class="thumbnail"></a>
-                    <div class="post-summary">
-                        <div class="post-title">
-                            <a href="/dd/" class="post-title-link">sample title</a>
-                            <span>(</span><a href="/dg/" class="post-source">i.reddit.com</a><span>)</span>
-                        </div>
-                        <div class="post-time-source">
-                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="/dg/" class="subreddit-link">/r/bla</a></span>
+                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="" class="username">/u/user/</a> in <a href="/dg/" class="subreddit-link">/r/bla</a></span>
                         </div>
                         <div class="post-bottom">
                             <a href="/dg" class="psot-bottom-item">24 comments</a>
@@ -625,7 +657,343 @@
                             <span>(</span><a href="/dg/" class="post-source">i.reddit.com</a><span>)</span>
                         </div>
                         <div class="post-time-source">
-                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="/dg/" class="subreddit-link">/r/bla</a></span>
+                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="" class="username">/u/user/</a> in <a href="/dg/" class="subreddit-link">/r/bla</a></span>
+                        </div>
+                        <div class="post-bottom">
+                            <a href="/dg" class="psot-bottom-item">24 comments</a>
+                            <a href="/dg" class="psot-bottom-item">share</a>
+                            <a href="/dg" class="psot-bottom-item">save</a>
+                            <a href="/dg" class="psot-bottom-item">hide</a>                                <a href="/dg" class="psot-bottom-item">gild</a>
+                            <a href="/dg" class="psot-bottom-item">report</a>
+                            <a href="/dg" class="psot-bottom-item">crosspost</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <span class="rank">1 </span>
+                    <div class="upvotes">
+                    <div class="upvote-arrow"></div>
+                        <span class="upvote-count">24.5k</span>
+                        <div class="downvote-arrow"></div>
+                    </div>
+                     <a class="thumbnail">
+    
+                    </a>
+                    <div class="post-summary">
+                        <div class="post-title">
+                            <a href="/dd/" class="post-title-link">sample title</a>
+                            <span>(</span><a href="/dg/" class="post-source">i.reddit.com</a><span>)</span>
+                        </div>
+                        <div class="post-time-source">
+                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="" class="username">/u/user/</a> in <a href="/dg/" class="subreddit-link">/r/bla</a></span>
+                        </div>
+                        <div class="post-bottom">
+                            <a href="/dg" class="psot-bottom-item">24 comments</a>
+                            <a href="/dg" class="psot-bottom-item">share</a>
+                            <a href="/dg" class="psot-bottom-item">save</a>
+                            <a href="/dg" class="psot-bottom-item">hide</a>                                <a href="/dg" class="psot-bottom-item">gild</a>
+                            <a href="/dg" class="psot-bottom-item">report</a>
+                            <a href="/dg" class="psot-bottom-item">crosspost</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <span class="rank">1 </span>
+                    <div class="upvotes">
+                    <div class="upvote-arrow"></div>
+                        <span class="upvote-count">24.5k</span>
+                        <div class="downvote-arrow"></div>
+                    </div>
+                     <a class="thumbnail">
+    
+                    </a>
+                    <div class="post-summary">
+                        <div class="post-title">
+                            <a href="/dd/" class="post-title-link">sample title</a>
+                            <span>(</span><a href="/dg/" class="post-source">i.reddit.com</a><span>)</span>
+                        </div>
+                        <div class="post-time-source">
+                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="" class="username">/u/user/</a> in <a href="/dg/" class="subreddit-link">/r/bla</a></span>
+                        </div>
+                        <div class="post-bottom">
+                            <a href="/dg" class="psot-bottom-item">24 comments</a>
+                            <a href="/dg" class="psot-bottom-item">share</a>
+                            <a href="/dg" class="psot-bottom-item">save</a>
+                            <a href="/dg" class="psot-bottom-item">hide</a>                                <a href="/dg" class="psot-bottom-item">gild</a>
+                            <a href="/dg" class="psot-bottom-item">report</a>
+                            <a href="/dg" class="psot-bottom-item">crosspost</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <span class="rank">1 </span>
+                    <div class="upvotes">
+                    <div class="upvote-arrow"></div>
+                        <span class="upvote-count">24.5k</span>
+                        <div class="downvote-arrow"></div>
+                    </div>
+                     <a class="thumbnail">
+    
+                    </a>
+                    <div class="post-summary">
+                        <div class="post-title">
+                            <a href="/dd/" class="post-title-link">sample title</a>
+                            <span>(</span><a href="/dg/" class="post-source">i.reddit.com</a><span>)</span>
+                        </div>
+                        <div class="post-time-source">
+                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="" class="username">/u/user/</a> in <a href="/dg/" class="subreddit-link">/r/bla</a></span>
+                        </div>
+                        <div class="post-bottom">
+                            <a href="/dg" class="psot-bottom-item">24 comments</a>
+                            <a href="/dg" class="psot-bottom-item">share</a>
+                            <a href="/dg" class="psot-bottom-item">save</a>
+                            <a href="/dg" class="psot-bottom-item">hide</a>                                <a href="/dg" class="psot-bottom-item">gild</a>
+                            <a href="/dg" class="psot-bottom-item">report</a>
+                            <a href="/dg" class="psot-bottom-item">crosspost</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <span class="rank">1 </span>
+                    <div class="upvotes">
+                    <div class="upvote-arrow"></div>
+                        <span class="upvote-count">24.5k</span>
+                        <div class="downvote-arrow"></div>
+                    </div>
+                     <a class="thumbnail">
+    
+                    </a>
+                    <div class="post-summary">
+                        <div class="post-title">
+                            <a href="/dd/" class="post-title-link">sample title</a>
+                            <span>(</span><a href="/dg/" class="post-source">i.reddit.com</a><span>)</span>
+                        </div>
+                        <div class="post-time-source">
+                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="" class="username">/u/user/</a> in <a href="/dg/" class="subreddit-link">/r/bla</a></span>
+                        </div>
+                        <div class="post-bottom">
+                            <a href="/dg" class="psot-bottom-item">24 comments</a>
+                            <a href="/dg" class="psot-bottom-item">share</a>
+                            <a href="/dg" class="psot-bottom-item">save</a>
+                            <a href="/dg" class="psot-bottom-item">hide</a>                                <a href="/dg" class="psot-bottom-item">gild</a>
+                            <a href="/dg" class="psot-bottom-item">report</a>
+                            <a href="/dg" class="psot-bottom-item">crosspost</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <span class="rank">1 </span>
+                    <div class="upvotes">
+                    <div class="upvote-arrow"></div>
+                        <span class="upvote-count">24.5k</span>
+                        <div class="downvote-arrow"></div>
+                    </div>
+                     <a class="thumbnail">
+    
+                    </a>
+                    <div class="post-summary">
+                        <div class="post-title">
+                            <a href="/dd/" class="post-title-link">sample title</a>
+                            <span>(</span><a href="/dg/" class="post-source">i.reddit.com</a><span>)</span>
+                        </div>
+                        <div class="post-time-source">
+                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="" class="username">/u/user/</a> in <a href="/dg/" class="subreddit-link">/r/bla</a></span>
+                        </div>
+                        <div class="post-bottom">
+                            <a href="/dg" class="psot-bottom-item">24 comments</a>
+                            <a href="/dg" class="psot-bottom-item">share</a>
+                            <a href="/dg" class="psot-bottom-item">save</a>
+                            <a href="/dg" class="psot-bottom-item">hide</a>                                <a href="/dg" class="psot-bottom-item">gild</a>
+                            <a href="/dg" class="psot-bottom-item">report</a>
+                            <a href="/dg" class="psot-bottom-item">crosspost</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <span class="rank">1 </span>
+                    <div class="upvotes">
+                    <div class="upvote-arrow"></div>
+                        <span class="upvote-count">24.5k</span>
+                        <div class="downvote-arrow"></div>
+                    </div>
+                     <a class="thumbnail">
+    
+                    </a>
+                    <div class="post-summary">
+                        <div class="post-title">
+                            <a href="/dd/" class="post-title-link">sample title</a>
+                            <span>(</span><a href="/dg/" class="post-source">i.reddit.com</a><span>)</span>
+                        </div>
+                        <div class="post-time-source">
+                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="" class="username">/u/user/</a> in <a href="/dg/" class="subreddit-link">/r/bla</a></span>
+                        </div>
+                        <div class="post-bottom">
+                            <a href="/dg" class="psot-bottom-item">24 comments</a>
+                            <a href="/dg" class="psot-bottom-item">share</a>
+                            <a href="/dg" class="psot-bottom-item">save</a>
+                            <a href="/dg" class="psot-bottom-item">hide</a>                                <a href="/dg" class="psot-bottom-item">gild</a>
+                            <a href="/dg" class="psot-bottom-item">report</a>
+                            <a href="/dg" class="psot-bottom-item">crosspost</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <span class="rank">1 </span>
+                    <div class="upvotes">
+                    <div class="upvote-arrow"></div>
+                        <span class="upvote-count">24.5k</span>
+                        <div class="downvote-arrow"></div>
+                    </div>
+                     <a class="thumbnail">
+    
+                    </a>
+                    <div class="post-summary">
+                        <div class="post-title">
+                            <a href="/dd/" class="post-title-link">sample title</a>
+                            <span>(</span><a href="/dg/" class="post-source">i.reddit.com</a><span>)</span>
+                        </div>
+                        <div class="post-time-source">
+                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="" class="username">/u/user/</a> in <a href="/dg/" class="subreddit-link">/r/bla</a></span>
+                        </div>
+                        <div class="post-bottom">
+                            <a href="/dg" class="psot-bottom-item">24 comments</a>
+                            <a href="/dg" class="psot-bottom-item">share</a>
+                            <a href="/dg" class="psot-bottom-item">save</a>
+                            <a href="/dg" class="psot-bottom-item">hide</a>                                <a href="/dg" class="psot-bottom-item">gild</a>
+                            <a href="/dg" class="psot-bottom-item">report</a>
+                            <a href="/dg" class="psot-bottom-item">crosspost</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <span class="rank">1 </span>
+                    <div class="upvotes">
+                    <div class="upvote-arrow"></div>
+                        <span class="upvote-count">24.5k</span>
+                        <div class="downvote-arrow"></div>
+                    </div>
+                     <a class="thumbnail">
+    
+                    </a>
+                    <div class="post-summary">
+                        <div class="post-title">
+                            <a href="/dd/" class="post-title-link">sample title</a>
+                            <span>(</span><a href="/dg/" class="post-source">i.reddit.com</a><span>)</span>
+                        </div>
+                        <div class="post-time-source">
+                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="" class="username">/u/user/</a> in <a href="/dg/" class="subreddit-link">/r/bla</a></span>
+                        </div>
+                        <div class="post-bottom">
+                            <a href="/dg" class="psot-bottom-item">24 comments</a>
+                            <a href="/dg" class="psot-bottom-item">share</a>
+                            <a href="/dg" class="psot-bottom-item">save</a>
+                            <a href="/dg" class="psot-bottom-item">hide</a>                                <a href="/dg" class="psot-bottom-item">gild</a>
+                            <a href="/dg" class="psot-bottom-item">report</a>
+                            <a href="/dg" class="psot-bottom-item">crosspost</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <span class="rank">1 </span>
+                    <div class="upvotes">
+                    <div class="upvote-arrow"></div>
+                        <span class="upvote-count">24.5k</span>
+                        <div class="downvote-arrow"></div>
+                    </div>
+                     <a class="thumbnail">
+    
+                    </a>
+                    <div class="post-summary">
+                        <div class="post-title">
+                            <a href="/dd/" class="post-title-link">sample title</a>
+                            <span>(</span><a href="/dg/" class="post-source">i.reddit.com</a><span>)</span>
+                        </div>
+                        <div class="post-time-source">
+                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="" class="username">/u/user/</a> in <a href="/dg/" class="subreddit-link">/r/bla</a></span>
+                        </div>
+                        <div class="post-bottom">
+                            <a href="/dg" class="psot-bottom-item">24 comments</a>
+                            <a href="/dg" class="psot-bottom-item">share</a>
+                            <a href="/dg" class="psot-bottom-item">save</a>
+                            <a href="/dg" class="psot-bottom-item">hide</a>                                <a href="/dg" class="psot-bottom-item">gild</a>
+                            <a href="/dg" class="psot-bottom-item">report</a>
+                            <a href="/dg" class="psot-bottom-item">crosspost</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <span class="rank">1 </span>
+                    <div class="upvotes">
+                    <div class="upvote-arrow"></div>
+                        <span class="upvote-count">24.5k</span>
+                        <div class="downvote-arrow"></div>
+                    </div>
+                     <a class="thumbnail">
+    
+                    </a>
+                    <div class="post-summary">
+                        <div class="post-title">
+                            <a href="/dd/" class="post-title-link">sample title</a>
+                            <span>(</span><a href="/dg/" class="post-source">i.reddit.com</a><span>)</span>
+                        </div>
+                        <div class="post-time-source">
+                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="" class="username">/u/user/</a> in <a href="/dg/" class="subreddit-link">/r/bla</a></span>
+                        </div>
+                        <div class="post-bottom">
+                            <a href="/dg" class="psot-bottom-item">24 comments</a>
+                            <a href="/dg" class="psot-bottom-item">share</a>
+                            <a href="/dg" class="psot-bottom-item">save</a>
+                            <a href="/dg" class="psot-bottom-item">hide</a>                                <a href="/dg" class="psot-bottom-item">gild</a>
+                            <a href="/dg" class="psot-bottom-item">report</a>
+                            <a href="/dg" class="psot-bottom-item">crosspost</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <span class="rank">1 </span>
+                    <div class="upvotes">
+                    <div class="upvote-arrow"></div>
+                        <span class="upvote-count">24.5k</span>
+                        <div class="downvote-arrow"></div>
+                    </div>
+                     <a class="thumbnail">
+    
+                    </a>
+                    <div class="post-summary">
+                        <div class="post-title">
+                            <a href="/dd/" class="post-title-link">sample title</a>
+                            <span>(</span><a href="/dg/" class="post-source">i.reddit.com</a><span>)</span>
+                        </div>
+                        <div class="post-time-source">
+                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="" class="username">/u/user/</a> in <a href="/dg/" class="subreddit-link">/r/bla</a></span>
+                        </div>
+                        <div class="post-bottom">
+                            <a href="/dg" class="psot-bottom-item">24 comments</a>
+                            <a href="/dg" class="psot-bottom-item">share</a>
+                            <a href="/dg" class="psot-bottom-item">save</a>
+                            <a href="/dg" class="psot-bottom-item">hide</a>                                <a href="/dg" class="psot-bottom-item">gild</a>
+                            <a href="/dg" class="psot-bottom-item">report</a>
+                            <a href="/dg" class="psot-bottom-item">crosspost</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <span class="rank">1 </span>
+                    <div class="upvotes">
+                    <div class="upvote-arrow"></div>
+                        <span class="upvote-count">24.5k</span>
+                        <div class="downvote-arrow"></div>
+                    </div>
+                     <a class="thumbnail">
+    
+                    </a>
+                    <div class="post-summary">
+                        <div class="post-title">
+                            <a href="/dd/" class="post-title-link">sample title</a>
+                            <span>(</span><a href="/dg/" class="post-source">i.reddit.com</a><span>)</span>
+                        </div>
+                        <div class="post-time-source">
+                            <span>submitted <time title="today bla bla">2 hours ago</time> by <a href="" class="username">/u/user/</a> in <a href="/dg/" class="subreddit-link">/r/bla</a></span>
                         </div>
                         <div class="post-bottom">
                             <a href="/dg" class="psot-bottom-item">24 comments</a>
@@ -659,7 +1027,15 @@
                             <a href="/dfg/" data-event-action="submit" class="submit-button-text">Submit a new link</a>
                         <div class="end-arrow"></div>
                     </div>
-                </div>  
+                </div>
+                <div id="gold-outer">
+                    <div id="gold-inner">
+                        <span id="gold-text">Reddit gold goal.</span>
+                        <div class="bar">
+                            <span id=bar-fill></span>
+                        </div>
+                    </div>
+                </div>
                 <div class="recent-links">
                     <span style="text-transform: uppercase;color:grey">Recently Viewed Links</span>
                     <div class="link-list">
